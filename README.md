@@ -6,8 +6,11 @@ The library has been written specifically to connect external traffic light cont
 
 **Usage**
 
-Usage of the library is very straightforward. First, create an instance of the client.
+Usage of the library is very straightforward. Build the library, then reference it and add:
 
+    using TraCI.NET;
+
+Now, create an instance of the client.
 
     var client = new TraCIClient();
 
@@ -22,7 +25,7 @@ We can now run the simulation, for example using a Task:
 
     Task.Run(() =>
     {
-        while (!sancellationTokenSource.IsCancellationRequested)
+        while (!cancellationTokenSource.IsCancellationRequested)
         {
             Thread.Sleep(100);
             client.ControlSimStep();
