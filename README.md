@@ -21,13 +21,13 @@ If using SUMO-GUI, press the play button after the network has loaded, otherwise
 We can now run the simulation, for example using a Task:
 
     Task.Run(() =>
-            {
-                while (!sancellationTokenSource.IsCancellationRequested)
-                {
-                    Thread.Sleep(100);
-                    client.ControlSimStep();
-                }
-            }
+    {
+        while (!sancellationTokenSource.IsCancellationRequested)
+        {
+            Thread.Sleep(100);
+            client.ControlSimStep();
+        }
+    }
 
 This assumes a step size of 0,1 second. The approach is quite rudimentary and does not take into account the call to ControlSimStep might take time.
 
